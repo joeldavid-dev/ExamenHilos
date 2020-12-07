@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+//Holaaaaaa
+
 //Solicita datos ruta, patron y espera a su hijo
 public class HiloPrincipal {
 
