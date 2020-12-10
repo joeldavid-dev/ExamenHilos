@@ -24,17 +24,17 @@ public class HiloNieto extends Thread {
         bisnietoArch.start();
 
         File carpeta = new File(ruta);
-        String[] listado = carpeta.list();
+        File[] archivos = carpeta.listFiles();
 
         int nMaches = 0;
-        if (listado == null || listado.length == 0) {
+        if (archivos == null || archivos.length == 0) {
             imp("No hay elementos dentro de la ruta dada");
         } else {
             try {
-                for (String archivo : listado) {
-                    if (archivo.matches(patron)) {
+                for (File archivo : archivos) {
+                    if (archivo.getName().matches(patron)) {
                         nMaches++;
-                        imp("Encontrado en: " + archivo);
+                        imp("Patron encontrado en '" + archivo.getName() + "' | (" + archivo.length() + " bytes)");
                     }
                 }
 
