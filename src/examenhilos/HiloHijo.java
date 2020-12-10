@@ -18,13 +18,14 @@ public class HiloHijo extends Thread {
     //Metodos
     @Override
     public void run() {
-        HiloNieto nieto = new HiloNieto(patron);
+        HiloNieto nieto = new HiloNieto(ruta, patron);
         nieto.start();
 
         File carpeta = new File(ruta);
         String[] listado = carpeta.list();
+        
         if (listado == null || listado.length == 0) {
-            System.out.println("No hay elementos dentro de la carpeta actual");
+            imp("No hay elementos dentro de la ruta dada");
         } else {
             for (String archivo : listado) {
                 imp(archivo);

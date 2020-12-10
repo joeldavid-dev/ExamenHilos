@@ -6,22 +6,45 @@ import java.io.File;
 public class HiloNieto extends Thread {
 
     //Atributos
+    private String ruta;
     private String patron;
 
     //Constructores
-    public HiloNieto(String patron) {
+    public HiloNieto(String ruta, String patron) {
+        this.ruta = ruta;
         this.patron = patron;
     }
 
     //Metodos
     @Override
     public void run() {
-        HiloBisnietoDir bisnietoDir = new HiloBisnietoDir();
-        HiloBisnietoArch bisnietoArch = new HiloBisnietoArch();
+        HiloBisnietoDir bisnietoDir = new HiloBisnietoDir(ruta, patron);
+        HiloBisnietoArch bisnietoArch = new HiloBisnietoArch(ruta, patron);
         bisnietoDir.start();
         bisnietoArch.start();
 
-        imp("Recibí el patron " + patron);
+        File carpeta = new File(ruta);
+        String[] listado = carpeta.list();
+
+        int nMaches = 0;
+        if (listado == null || listado.length == 0) {
+            imp("No hay elementos dentro de la ruta dada");
+        } else {
+            try {
+                for (String archivo : listado) {
+                    if (archivo.matches(patron)) {
+                        nMaches++;
+                        imp("Encontrado en: " + archivo);
+                    }
+                }
+
+                if (nMaches == 0) {
+                    imp("No hay elementos que coincidan con el patron.");
+                }
+            } catch (Exception ex) {
+                imp("ERROR. El patron no esta bien redactado.");
+            }
+        }
     }
 
     private void imp(String mensaje) {
