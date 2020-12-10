@@ -27,9 +27,11 @@ public class HiloBisnietoDir extends Thread {
         } else {
             try {
                 for (File archivo : archivos) {
-                    if (archivo.getName().matches(patron)) {
-                        nMaches++;
-                        imp("Patron encontrado en '" + archivo.getName() + "' | (" + archivo.length() + " bytes)");
+                    if (archivo.isDirectory()) {
+                        if (archivo.getName().matches(patron)) {
+                            nMaches++;
+                            imp("Patron encontrado en '" + archivo.getName() + "' | (" + archivo.length() + " bytes)");
+                        }
                     }
                 }
 

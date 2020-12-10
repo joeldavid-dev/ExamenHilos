@@ -27,9 +27,11 @@ public class HiloBisnietoArch extends Thread {
         } else {
             try {
                 for (File archivo : archivos) {
-                    if (archivo.getName().matches(patron)) {
-                        nMaches++;
-                        imp("Patron encontrado en '" + archivo.getName() + "' | (" + archivo.length() + " bytes)");
+                    if (archivo.isFile()) {
+                        if (archivo.getName().matches(patron)) {
+                            nMaches++;
+                            imp("Patron encontrado en '" + archivo.getName() + "' | (" + archivo.length() + " bytes)");
+                        }
                     }
                 }
 
