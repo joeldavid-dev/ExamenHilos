@@ -18,6 +18,9 @@ public class HiloHijo extends Thread {
     //Metodos
     @Override
     public void run() {
+        HiloNieto nieto = new HiloNieto(patron);
+        nieto.start();
+
         File carpeta = new File(ruta);
         String[] listado = carpeta.list();
         if (listado == null || listado.length == 0) {
@@ -30,6 +33,6 @@ public class HiloHijo extends Thread {
     }
 
     private void imp(String mensaje) {
-        System.out.println(this.getName() + " (Hijo): " + mensaje);
+        System.out.println(this.getName() + " (Hijo, listado general): " + mensaje);
     }
 }

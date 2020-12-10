@@ -1,18 +1,14 @@
 package examenhilos;
+//Solicita datos ruta, patron y espera a su hijo
 
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-//Holaaaaaa
-
-//Solicita datos ruta, patron y espera a su hijo
 public class HiloPrincipal {
 
     public static void main(String[] args) {
         String ruta = "";
         String patron = "";
-        
+
         Scanner entradaEscaner = new Scanner(System.in);
         imp("Ruta del directorio a trabajar: ");
         ruta = entradaEscaner.nextLine();
@@ -34,7 +30,6 @@ public class HiloPrincipal {
         try {
             hijo.join();
         } catch (InterruptedException ex) {
-            Logger.getLogger(HiloPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         imp("He terminado");
