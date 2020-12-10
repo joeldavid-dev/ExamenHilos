@@ -27,6 +27,7 @@ public class HiloHijo extends Thread {
                 imp(archivo);
             }
         }
+        imp("Proceso terminado...");
     }
 
     private void imp(String mensaje) {

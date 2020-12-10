@@ -36,6 +36,8 @@ public class HiloBisnietoArch extends Thread {
                 }
             } catch (Exception ex) {
                 imp("ERROR. El patron no esta bien redactado.");
+            } finally {
+                imp("Proceso terminado...");
             }
         }
     }
