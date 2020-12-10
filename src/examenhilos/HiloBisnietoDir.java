@@ -1,21 +1,17 @@
 package examenhilos;
-// Realizará la búsqueda de directorios
 
 import java.io.File;
 
 public class HiloBisnietoDir extends Thread {
 
-    //Atributos
     private String ruta;
     private String patron;
 
-    //Constructores
     public HiloBisnietoDir(String ruta, String patron) {
         this.ruta = ruta;
         this.patron = patron;
     }
 
-    //Metodos
     @Override
     public void run() {
         File carpeta = new File(ruta);

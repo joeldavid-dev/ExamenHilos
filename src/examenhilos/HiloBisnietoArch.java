@@ -1,21 +1,17 @@
 package examenhilos;
-// Realizará la búsqueda de archivos
 
 import java.io.File;
 
 public class HiloBisnietoArch extends Thread {
 
-    //Atributos
     private String ruta;
     private String patron;
 
-    //Constructores
     public HiloBisnietoArch(String ruta, String patron) {
         this.ruta = ruta;
         this.patron = patron;
     }
 
-    //Metodos
     @Override
     public void run() {
         File carpeta = new File(ruta);

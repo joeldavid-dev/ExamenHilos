@@ -1,21 +1,17 @@
 package examenhilos;
-// Realizará la búsqueda de archivos y directorios sin distinción
 
 import java.io.File;
 
 public class HiloNieto extends Thread {
 
-    //Atributos
     private String ruta;
     private String patron;
 
-    //Constructores
     public HiloNieto(String ruta, String patron) {
         this.ruta = ruta;
         this.patron = patron;
     }
 
-    //Metodos
     @Override
     public void run() {
         HiloBisnietoDir bisnietoDir = new HiloBisnietoDir(ruta, patron);

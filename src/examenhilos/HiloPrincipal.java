@@ -1,5 +1,4 @@
 package examenhilos;
-//Solicita datos ruta, patron y espera a su hijo
 
 import java.util.Scanner;
 
