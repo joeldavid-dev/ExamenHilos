@@ -1,6 +1,6 @@
 package examenhilos;
 // Realizará la búsqueda de directorios
-public class HiloBisnietoDirectorios extends Thread {
+public class HiloBisnietoDir extends Thread {
     //Atributos
     //Constructores
     //Metodos

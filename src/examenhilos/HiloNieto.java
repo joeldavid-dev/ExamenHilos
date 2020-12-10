@@ -16,6 +16,11 @@ public class HiloNieto extends Thread {
     //Metodos
     @Override
     public void run() {
+        HiloBisnietoDir bisnietoDir = new HiloBisnietoDir();
+        HiloBisnietoArch bisnietoArch = new HiloBisnietoArch();
+        bisnietoDir.start();
+        bisnietoArch.start();
+
         imp("Recibí el patron " + patron);
     }
 
